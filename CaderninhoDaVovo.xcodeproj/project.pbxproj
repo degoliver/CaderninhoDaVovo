@@ -12,9 +12,6 @@
 		F1317C4A1C0A37B90037B37A /* ReceitasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1317C441C0A37B90037B37A /* ReceitasTableViewController.swift */; };
 		F1317C4B1C0A37B90037B37A /* ReceitaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1317C451C0A37B90037B37A /* ReceitaTableViewCell.swift */; };
 		F1317C4C1C0A37B90037B37A /* SingUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1317C461C0A37B90037B37A /* SingUpViewController.swift */; };
-		F1317C7E1C0A3D270037B37A /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1317C7D1C0A3D270037B37A /* Parse.framework */; };
-		F1317C801C0A3D5F0037B37A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1317C7F1C0A3D5F0037B37A /* Bolts.framework */; };
-		F1317C821C0A3D670037B37A /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1317C811C0A3D670037B37A /* ParseUI.framework */; };
 		F1317C841C0A3EFF0037B37A /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1317C831C0A3EFF0037B37A /* Social.framework */; };
 		F1317C861C0A3F070037B37A /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1317C851C0A3F070037B37A /* Accounts.framework */; };
 		F1317C881C0A3F190037B37A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1317C871C0A3F190037B37A /* SystemConfiguration.framework */; };
@@ -34,6 +31,9 @@
 		F19ACB371C0A36B300B7C392 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F19ACB351C0A36B300B7C392 /* LaunchScreen.storyboard */; };
 		F19ACB421C0A36B300B7C392 /* CaderninhoDaVovoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19ACB411C0A36B300B7C392 /* CaderninhoDaVovoTests.swift */; };
 		F19ACB4D1C0A36B300B7C392 /* CaderninhoDaVovoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19ACB4C1C0A36B300B7C392 /* CaderninhoDaVovoUITests.swift */; };
+		F1F7E5951C0A42CD00F3E58E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F7E5921C0A42CD00F3E58E /* Bolts.framework */; };
+		F1F7E5961C0A42CD00F3E58E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F7E5931C0A42CD00F3E58E /* Parse.framework */; };
+		F1F7E5971C0A42CD00F3E58E /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F7E5941C0A42CD00F3E58E /* ParseUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,9 +59,6 @@
 		F1317C441C0A37B90037B37A /* ReceitasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceitasTableViewController.swift; sourceTree = "<group>"; };
 		F1317C451C0A37B90037B37A /* ReceitaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceitaTableViewCell.swift; sourceTree = "<group>"; };
 		F1317C461C0A37B90037B37A /* SingUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingUpViewController.swift; sourceTree = "<group>"; };
-		F1317C7D1C0A3D270037B37A /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../Parse.framework; sourceTree = "<group>"; };
-		F1317C7F1C0A3D5F0037B37A /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		F1317C811C0A3D670037B37A /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		F1317C831C0A3EFF0037B37A /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		F1317C851C0A3F070037B37A /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		F1317C871C0A3F190037B37A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -87,6 +84,9 @@
 		F19ACB481C0A36B300B7C392 /* CaderninhoDaVovoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaderninhoDaVovoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F19ACB4C1C0A36B300B7C392 /* CaderninhoDaVovoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaderninhoDaVovoUITests.swift; sourceTree = "<group>"; };
 		F19ACB4E1C0A36B300B7C392 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1F7E5921C0A42CD00F3E58E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../Bolts.framework; sourceTree = "<group>"; };
+		F1F7E5931C0A42CD00F3E58E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../Parse.framework; sourceTree = "<group>"; };
+		F1F7E5941C0A42CD00F3E58E /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = ../ParseUI.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +101,14 @@
 				F1317C921C0A3F490037B37A /* CoreLocation.framework in Frameworks */,
 				F1317C901C0A3F430037B37A /* CoreGraphics.framework in Frameworks */,
 				F1317C8E1C0A3F3B0037B37A /* CFNetwork.framework in Frameworks */,
+				F1F7E5951C0A42CD00F3E58E /* Bolts.framework in Frameworks */,
 				F1317C8C1C0A3F320037B37A /* AudioToolbox.framework in Frameworks */,
 				F1317C8A1C0A3F210037B37A /* StoreKit.framework in Frameworks */,
+				F1F7E5961C0A42CD00F3E58E /* Parse.framework in Frameworks */,
 				F1317C881C0A3F190037B37A /* SystemConfiguration.framework in Frameworks */,
+				F1F7E5971C0A42CD00F3E58E /* ParseUI.framework in Frameworks */,
 				F1317C861C0A3F070037B37A /* Accounts.framework in Frameworks */,
 				F1317C841C0A3EFF0037B37A /* Social.framework in Frameworks */,
-				F1317C821C0A3D670037B37A /* ParseUI.framework in Frameworks */,
-				F1317C7E1C0A3D270037B37A /* Parse.framework in Frameworks */,
-				F1317C801C0A3D5F0037B37A /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +132,9 @@
 		F1317C4E1C0A38060037B37A /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				F1F7E5921C0A42CD00F3E58E /* Bolts.framework */,
+				F1F7E5931C0A42CD00F3E58E /* Parse.framework */,
+				F1F7E5941C0A42CD00F3E58E /* ParseUI.framework */,
 				F1317C991C0A3F710037B37A /* libz.tbd */,
 				F1317C971C0A3F6B0037B37A /* libsqlite3.tbd */,
 				F1317C951C0A3F560037B37A /* Security.framework */,
@@ -144,9 +147,6 @@
 				F1317C871C0A3F190037B37A /* SystemConfiguration.framework */,
 				F1317C851C0A3F070037B37A /* Accounts.framework */,
 				F1317C831C0A3EFF0037B37A /* Social.framework */,
-				F1317C811C0A3D670037B37A /* ParseUI.framework */,
-				F1317C7F1C0A3D5F0037B37A /* Bolts.framework */,
-				F1317C7D1C0A3D270037B37A /* Parse.framework */,
 			);
 			name = Framework;
 			path = CaderninhoDaVovo;
