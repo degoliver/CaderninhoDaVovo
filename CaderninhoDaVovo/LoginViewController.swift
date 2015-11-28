@@ -58,6 +58,7 @@ class LoginViewController: BackgroundViewController , PFLogInViewControllerDeleg
     
     @IBAction func SingUpAction(sender: UIButton) {
         performSegueWithIdentifier("toSingup", sender: sender )
+        //Teste
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {

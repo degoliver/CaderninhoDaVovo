@@ -25,7 +25,6 @@
 		F1317C981C0A3F6B0037B37A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F1317C971C0A3F6B0037B37A /* libsqlite3.tbd */; };
 		F1317C9A1C0A3F710037B37A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F1317C991C0A3F710037B37A /* libz.tbd */; };
 		F19ACB2D1C0A36B300B7C392 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19ACB2C1C0A36B300B7C392 /* AppDelegate.swift */; };
-		F19ACB2F1C0A36B300B7C392 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19ACB2E1C0A36B300B7C392 /* ViewController.swift */; };
 		F19ACB321C0A36B300B7C392 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F19ACB301C0A36B300B7C392 /* Main.storyboard */; };
 		F19ACB341C0A36B300B7C392 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F19ACB331C0A36B300B7C392 /* Assets.xcassets */; };
 		F19ACB371C0A36B300B7C392 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F19ACB351C0A36B300B7C392 /* LaunchScreen.storyboard */; };
@@ -73,7 +72,6 @@
 		F1317C991C0A3F710037B37A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		F19ACB291C0A36B300B7C392 /* CaderninhoDaVovo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaderninhoDaVovo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F19ACB2C1C0A36B300B7C392 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F19ACB2E1C0A36B300B7C392 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F19ACB311C0A36B300B7C392 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F19ACB331C0A36B300B7C392 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F19ACB361C0A36B300B7C392 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -177,7 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				F19ACB2C1C0A36B300B7C392 /* AppDelegate.swift */,
-				F19ACB2E1C0A36B300B7C392 /* ViewController.swift */,
 				F1317C421C0A37B90037B37A /* BackgroundViewController.swift */,
 				F1317C431C0A37B90037B37A /* LoginViewController.swift */,
 				F1317C441C0A37B90037B37A /* ReceitasTableViewController.swift */,
@@ -343,7 +340,6 @@
 				F1317C491C0A37B90037B37A /* LoginViewController.swift in Sources */,
 				F1317C4C1C0A37B90037B37A /* SingUpViewController.swift in Sources */,
 				F1317C481C0A37B90037B37A /* BackgroundViewController.swift in Sources */,
-				F19ACB2F1C0A36B300B7C392 /* ViewController.swift in Sources */,
 				F19ACB2D1C0A36B300B7C392 /* AppDelegate.swift in Sources */,
 				F1317C4A1C0A37B90037B37A /* ReceitasTableViewController.swift in Sources */,
 				F1317C4B1C0A37B90037B37A /* ReceitaTableViewCell.swift in Sources */,
