@@ -1,22 +1,35 @@
 //
 //  AppDelegate.swift
-//  CaderninhoDaVovo
+//  CaderninoDaVovo
 //
-//  Created by Diego on 28/11/15.
-//  Copyright © 2015 7MOB. All rights reserved.
+//  Created by Usuário Convidado on 25/11/15.
+//  Copyright © 2015 Usuário Convidado. All rights reserved.
 //
 
 import UIKit
+import Parse
+import Bolts
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        Parse.enableLocalDatastore()
+        
+        
+        Parse.setApplicationId("gtgk6FNHtDP296uwoDrCX081nFyykbj4TBgOTH6T", clientKey: "jdZX4nl2rZ3oye7okRv6sfRuAfQmjliGw0ONM6LC")
         // Override point for customization after application launch.
+        
+        
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         return true
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {
