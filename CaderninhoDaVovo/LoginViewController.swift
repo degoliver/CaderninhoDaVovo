@@ -36,20 +36,20 @@ class LoginViewController: BackgroundViewController , PFLogInViewControllerDeleg
     }
 
     @IBAction func LoginAction(sender: UIButton) {
-        var username = self.usernameField.text
-        var password = self.passwordField.text
+        let username = self.usernameField.text
+        let password = self.passwordField.text
         
         if(username?.utf16.count < 4 || password?.utf16.count < 5){
-            var alert = UIAlertView(title: "Invalid", message: "Usuario ou Senha Invalida ", delegate: self, cancelButtonTitle: "OK")
+            let alert = UIAlertView(title: "Invalid", message: "Usuario ou Senha Invalida ", delegate: self, cancelButtonTitle: "OK")
             alert.show()
         }else{
             PFUser.logInWithUsernameInBackground(username!, password: password!, block: {(user, error ) -> Void in
                 if((user) != nil){
-                    var alert = UIAlertView(title: "Success", message: "Logged In", delegate: self, cancelButtonTitle: "OK")
-                    alert.show()
+                    //var alert = UIAlertView(title: "Success", message: "Logged In", delegate: self, cancelButtonTitle: "OK")
+                    //alert.show()
                   self.performSegueWithIdentifier("toPrincipal", sender: sender )
                 }else{
-                    var alert = UIAlertView(title: "Error", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
+                    let alert = UIAlertView(title: "Erro", message: "Não foi possível conectar", delegate: self, cancelButtonTitle: "OK")
                     alert.show()
                 }
             })

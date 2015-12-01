@@ -11,20 +11,19 @@ import Parse
 
 class ReceitasTableViewController: UITableViewController {
     
-    var testArray = [String]()
+    var receitas:[Receita] = [Receita]()
+    var session: NSURLSession?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        testArray=["1","2"]
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        Receita.carregaReceita("http://syskf.institutobfh.com.br//modulos/appCaderninho/selectReceitaList.ashx", callback: carregaTable)
     }
 
+    func carregaTable(receitas:[Receita]){
+        self.receitas = receitas
+        self.tableView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -39,20 +38,53 @@ class ReceitasTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return testArray.count
+        return receitas.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! ReceitaTableViewCell
         
-        cell.lblReceitas.text = self.testArray[indexPath.row]
-
+        cell.lblReceita.text = self.receitas[indexPath.row].nome
+        cell.lblLike.text = (self.receitas[indexPath.row].qtdLike! == 0) ? "Ninguém favoritou ainda" : String(self.receitas[indexPath.row].qtdLike!) + ((self.receitas[indexPath.row].qtdLike! == 1) ? " gostou" : " gostaram")
+        if(self.receitas[indexPath.row].imagem != ""){
+            downloadImage(cell, imgURL: self.receitas[indexPath.row].imagem!)
+        }
+        
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("receitaToDetalheSegue", sender: self.receitas[indexPath.row].codigo)
     }
    
     @IBAction func LogoutAction(sender: UIButton) {
         PFUser.logOut()
         self.dismissViewControllerAnimated(false, completion: nil)
+    }
+    
+    func downloadImage(cell: ReceitaTableViewCell, imgURL: String) {
+        cell.loadImg.startAnimating()
+        let url = NSURL(string: imgURL)!
+        let imageSession = NSURLSession.sharedSession()
+        let imgTask = imageSession.downloadTaskWithURL(url){(url,response,error) -> Void in
+            if(error==nil){
+                if let imageData = NSData(contentsOfURL: url!){
+                    dispatch_async(dispatch_get_main_queue(), {
+                            cell.imgReceita.image = UIImage(data: imageData)
+                            cell.loadImg.stopAnimating()
+                        }
+                    )
+                }
+            }else{print("erro na imagem")}
+        }
+        imgTask.resume()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier=="receitaToDetalheSegue"){
+            let vc:DetalheReceitaViewController = segue.destinationViewController as!DetalheReceitaViewController
+            vc.codigo = "\(sender!)"
+        }
     }
 
     /*

@@ -23,7 +23,7 @@ class BackgroundViewController: UIViewController {
         
         let nome = UILabel()
         nome.text = "Caderninho da Vovó"
-        nome.frame = CGRectMake(45, 50, 250, 40)
+        nome.frame = CGRectMake(40, 50, 250, 40)
         nome.font = UIFont(name: "zapfino", size: 20)
         self.view.addSubview(nome)
     }

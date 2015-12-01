@@ -43,20 +43,20 @@ class SingUpViewController: BackgroundViewController {
     */
 
     @IBAction func SingUpAction(sender: UIButton) {
-        var username = self.usernameField.text
-        var password = self.passwordField.text
-        var email = self.emailField.text
+        let username = self.usernameField.text
+        let password = self.passwordField.text
+        let email = self.emailField.text
         
         if(username?.utf16.count < 4 || password?.utf16.count < 5){
             
-            var alert = UIAlertView(title: "Invalid", message: "Usuario ou Senha Invalida ", delegate: self, cancelButtonTitle: "OK")
+            let alert = UIAlertView(title: "Invalid", message: "Usuario ou Senha Invalida ", delegate: self, cancelButtonTitle: "OK")
             alert.show()
         }else if(email?.utf16.count < 8){
-            var alert = UIAlertView(title: "Invalid", message: "Email Invalido", delegate: self, cancelButtonTitle: "OK")
+            let alert = UIAlertView(title: "Invalid", message: "Email Invalido", delegate: self, cancelButtonTitle: "OK")
             alert.show()
         }else{
             
-            var newUser = PFUser()
+            let newUser = PFUser()
             newUser.username = username
             newUser.password = password
             newUser.email = email
@@ -64,10 +64,10 @@ class SingUpViewController: BackgroundViewController {
             newUser.signUpInBackgroundWithBlock({ (sucess, error ) -> Void in
                 
                 if((error) != nil){
-                    var alert = UIAlertView(title: "Invalid", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
+                    let alert = UIAlertView(title: "Invalid", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
                     alert.show()
                 }else{
-                    var alert = UIAlertView(title: "Success", message: "Usuario Criado", delegate: self, cancelButtonTitle: "OK")
+                    let alert = UIAlertView(title: "Success", message: "Usuario Criado", delegate: self, cancelButtonTitle: "OK")
                     alert.show()
                     self.dismissViewControllerAnimated(false, completion: nil)
                 }

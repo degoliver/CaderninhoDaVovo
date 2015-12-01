@@ -10,17 +10,17 @@ import UIKit
 
 class ReceitaTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lblReceita: UILabel!
+    @IBOutlet weak var lblLike: UILabel!
+    @IBOutlet weak var imgReceita: UIImageView!
+    @IBOutlet weak var loadImg: UIActivityIndicatorView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
-    @IBOutlet weak var lblReceitas: UILabel!
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }
