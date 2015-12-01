@@ -17,12 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mov-gT-EwZ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuário" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mov-gT-EwZ">
                                 <rect key="frame" x="44" y="149" width="232" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CcF-Yr-43P">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CcF-Yr-43P">
                                 <rect key="frame" x="44" y="204" width="232" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -42,12 +42,18 @@
                                     <action selector="SingUpAction:" destination="BWC-s8-A7c" eventType="touchUpInside" id="X0l-1a-Lpz"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6it-Vq-vll">
+                                <rect key="frame" x="44" y="96" width="232" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="emailField" destination="Dau-mB-IFq" id="JZU-5N-DVH"/>
+                        <outlet property="nameField" destination="6it-Vq-vll" id="FeC-gr-H9I"/>
                         <outlet property="passwordField" destination="CcF-Yr-43P" id="1A8-iQ-cYr"/>
                         <outlet property="signup_btn" destination="qGk-c1-Lwo" id="6Be-Tv-mPa"/>
                         <outlet property="usernameField" destination="Mov-gT-EwZ" id="SjY-rb-jFX"/>
@@ -138,28 +144,28 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="ok1-rS-OXL">
+                                            <rect key="frame" x="77" y="33" width="15" height="15"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000 Gostaram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2GR-B2-hgl">
+                                            <rect key="frame" x="100" y="32" width="210" height="21"/>
+                                            <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUi-pO-wYq">
-                                            <rect key="frame" x="77" y="8" width="210" height="21"/>
+                                            <rect key="frame" x="76" y="6" width="210" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vDS-kL-nxT">
-                                            <rect key="frame" x="9" y="3" width="60" height="60"/>
-                                        </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="ok1-rS-OXL">
-                                            <rect key="frame" x="77" y="37" width="15" height="15"/>
+                                            <rect key="frame" x="8" y="1" width="60" height="60"/>
                                         </imageView>
                                         <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="bq6-30-MxQ">
-                                            <rect key="frame" x="29" y="25" width="20" height="20"/>
+                                            <rect key="frame" x="28" y="27" width="20" height="20"/>
                                             <color key="color" red="1" green="0.010526315789473717" blue="0.010526315789473717" alpha="1" colorSpace="calibratedRGB"/>
                                         </activityIndicatorView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000 Gostaram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2GR-B2-hgl">
-                                            <rect key="frame" x="100" y="36" width="210" height="21"/>
-                                            <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="14"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -287,19 +293,56 @@
         <!--Minhas Receitas-->
         <scene sceneID="dmw-wf-Bvj">
             <objects>
-                <tableViewController id="few-pt-WWK" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xwp-vH-dZT">
+                <tableViewController id="few-pt-WWK" customClass="MinhasReceitasTableViewController" customModule="CaderninhoDaVovo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xwp-vH-dZT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellID" id="4Zv-fa-pEq">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellID" rowHeight="70" id="4Zv-fa-pEq" customClass="MinhaReceitaTableViewCell" customModule="CaderninhoDaVovo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Zv-fa-pEq" id="usC-0a-Kqa">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFE-WZ-WFE">
+                                            <rect key="frame" x="76" y="6" width="210" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fH6-V6-mtU">
+                                            <rect key="frame" x="8" y="1" width="60" height="60"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="4ye-LH-PBm">
+                                            <rect key="frame" x="77" y="33" width="15" height="15"/>
+                                        </imageView>
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="dR7-u6-2AF">
+                                            <rect key="frame" x="28" y="23" width="20" height="20"/>
+                                            <color key="color" red="1" green="0.010526315790000001" blue="0.010526315790000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </activityIndicatorView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000 Gostaram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbd-lj-QAm">
+                                            <rect key="frame" x="100" y="32" width="210" height="21"/>
+                                            <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nru-uz-onr">
+                                            <rect key="frame" x="263" y="11" width="40" height="40"/>
+                                            <state key="normal" image="circle-edit"/>
+                                            <connections>
+                                                <action selector="editReceita:" destination="4Zv-fa-pEq" eventType="touchUpInside" id="CNh-Fc-6yE"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imgReceita" destination="fH6-V6-mtU" id="NRP-os-tSC"/>
+                                    <outlet property="lblLike" destination="Mbd-lj-QAm" id="KSH-pU-0EU"/>
+                                    <outlet property="lblReceita" destination="bFE-WZ-WFE" id="TPa-8X-xXh"/>
+                                    <outlet property="loadImg" destination="dR7-u6-2AF" id="GwB-Pz-kzL"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -308,10 +351,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Minhas Receitas" id="U30-Oa-xdM">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="2BE-TZ-rLi"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="2BE-TZ-rLi">
+                            <connections>
+                                <action selector="LogoutAction:" destination="few-pt-WWK" id="UUa-hc-XFS"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ghL-iw-kkM">
                             <connections>
-                                <segue destination="uVi-Gd-iRe" kind="show" id="H5B-2a-ODP"/>
+                                <action selector="adicionarReceita:" destination="few-pt-WWK" id="nWz-gk-DQC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -384,6 +431,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="circle-edit" width="48" height="48"/>
         <image name="cooking-utensil" width="30" height="30"/>
         <image name="diary" width="30" height="30"/>
         <image name="heart" width="48" height="48"/>

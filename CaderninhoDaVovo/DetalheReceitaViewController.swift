@@ -23,9 +23,8 @@ class DetalheReceitaViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        PFUser.currentUser()?.objectId
         
-        Receita.carregaReceita("http://syskf.institutobfh.com.br//modulos/appCaderninho/selectReceita.ashx?receitaID=" + codigo! + "&usuarioID=1", callback: carregaView)
+        Receita.carregaReceita("http://syskf.institutobfh.com.br//modulos/appCaderninho/selectReceita.ashx?receitaID=" + codigo! + "&usuarioID="+PFUser.currentUser()!.objectId!, callback: carregaView)
     }
     
     override func didReceiveMemoryWarning() {
