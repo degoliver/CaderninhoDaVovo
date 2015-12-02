@@ -40,8 +40,7 @@ class LoginViewController: BackgroundViewController , PFLogInViewControllerDeleg
         let password = self.passwordField.text
         
         if(username?.utf16.count < 4 || password?.utf16.count < 5){
-            let alert = UIAlertView(title: "Invalid", message: "Usuário ou Senha Inválida ", delegate: self, cancelButtonTitle: "OK")
-            alert.show()
+            Utils.alert("Erro", msg: "Usuário ou senha inválida")
         }else{
             PFUser.logInWithUsernameInBackground(username!, password: password!, block: {(user, error ) -> Void in
                 if((user) != nil){
@@ -49,8 +48,7 @@ class LoginViewController: BackgroundViewController , PFLogInViewControllerDeleg
                     //alert.show()
                   self.performSegueWithIdentifier("toPrincipal", sender: sender )
                 }else{
-                    let alert = UIAlertView(title: "Erro", message: "Não foi possível conectar", delegate: self, cancelButtonTitle: "OK")
-                    alert.show()
+                    Utils.alert("Erro", msg: "Não foi possível conectar")
                 }
             })
         }
