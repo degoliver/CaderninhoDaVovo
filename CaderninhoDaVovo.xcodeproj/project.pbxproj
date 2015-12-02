@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ACF817951C0F537700967E4D /* CadastrarReceitasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF817941C0F537700967E4D /* CadastrarReceitasViewController.swift */; };
+		ACF817971C0F690500967E4D /* EditarReceitasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF817961C0F690500967E4D /* EditarReceitasViewController.swift */; };
 		F1267DE91C0F2D1400E9212D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1267DE81C0F2D1400E9212D /* Assets.xcassets */; };
 		F1317C481C0A37B90037B37A /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1317C421C0A37B90037B37A /* BackgroundViewController.swift */; };
 		F1317C491C0A37B90037B37A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1317C431C0A37B90037B37A /* LoginViewController.swift */; };
@@ -58,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ACF817941C0F537700967E4D /* CadastrarReceitasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastrarReceitasViewController.swift; sourceTree = "<group>"; };
+		ACF817961C0F690500967E4D /* EditarReceitasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditarReceitasViewController.swift; sourceTree = "<group>"; };
 		F1267DE81C0F2D1400E9212D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1317C421C0A37B90037B37A /* BackgroundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundViewController.swift; sourceTree = "<group>"; };
 		F1317C431C0A37B90037B37A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +195,8 @@
 				F1317C451C0A37B90037B37A /* ReceitaTableViewCell.swift */,
 				F1317C461C0A37B90037B37A /* SingUpViewController.swift */,
 				F19ACB301C0A36B300B7C392 /* Main.storyboard */,
+				ACF817961C0F690500967E4D /* EditarReceitasViewController.swift */,
+				ACF817941C0F537700967E4D /* CadastrarReceitasViewController.swift */,
 				F1267DE81C0F2D1400E9212D /* Assets.xcassets */,
 				F19ACB351C0A36B300B7C392 /* LaunchScreen.storyboard */,
 				F19ACB381C0A36B300B7C392 /* Info.plist */,
@@ -352,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACF817971C0F690500967E4D /* EditarReceitasViewController.swift in Sources */,
 				F14AC3441C0B6E96005F20A3 /* DetalheReceitaViewController.swift in Sources */,
 				F1317C491C0A37B90037B37A /* LoginViewController.swift in Sources */,
 				F15DED721C0E241C00B9A90F /* MinhasReceitasTableViewController.swift in Sources */,
@@ -360,6 +367,7 @@
 				F1317C481C0A37B90037B37A /* BackgroundViewController.swift in Sources */,
 				F19ACB2D1C0A36B300B7C392 /* AppDelegate.swift in Sources */,
 				F142A9BF1C0F390400CB536B /* Utils.swift in Sources */,
+				ACF817951C0F537700967E4D /* CadastrarReceitasViewController.swift in Sources */,
 				F1317C4A1C0A37B90037B37A /* ReceitasTableViewController.swift in Sources */,
 				F1317C4B1C0A37B90037B37A /* ReceitaTableViewCell.swift in Sources */,
 				F15DED741C0E243300B9A90F /* MinhaReceitaTableViewCell.swift in Sources */,

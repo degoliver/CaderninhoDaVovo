@@ -11,6 +11,7 @@ import Parse
 
 class SingUpViewController: BackgroundViewController {
    
+    @IBOutlet weak var voltar: UIButton!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var usernameField: UITextField!
@@ -23,6 +24,10 @@ class SingUpViewController: BackgroundViewController {
         signup_btn.layer.cornerRadius = 5
         signup_btn.layer.borderWidth = 2
         signup_btn.layer.borderColor = UIColor.blackColor().CGColor
+        voltar.backgroundColor = UIColor.clearColor()
+        voltar.layer.cornerRadius = 5
+        voltar.layer.borderWidth = 2
+        voltar.layer.borderColor = UIColor.blackColor().CGColor
         // Do any additional setup after loading the view.
     }
 
@@ -63,6 +68,9 @@ class SingUpViewController: BackgroundViewController {
         }
     }
     
+    @IBAction func voltar(sender: AnyObject) {
+     self.dismissViewControllerAnimated(false, completion: nil)
+    }
     func salvaUsuarioMySQL(){
         var dados:[String] = [String]()
         dados.append("login=\(PFUser.currentUser()!.username!)")

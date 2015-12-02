@@ -78,6 +78,11 @@ class MinhasReceitasTableViewController: UITableViewController {
             let vc:DetalheReceitaViewController = segue.destinationViewController as!DetalheReceitaViewController
             vc.codigo = "\(sender!)"
         }
+        if(segue.identifier=="minhaReceitaToEditarSegue"){
+            let vc:EditarReceitasViewController = segue.destinationViewController as!EditarReceitasViewController
+            vc.codigo = "\(sender!)"
+        }
+        
     }
     
     /*
