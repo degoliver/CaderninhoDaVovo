@@ -331,13 +331,11 @@
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nru-uz-onr">
                                             <rect key="frame" x="263" y="11" width="40" height="40"/>
                                             <state key="normal" image="circle-edit"/>
-                                            <connections>
-                                                <action selector="editReceita:" destination="4Zv-fa-pEq" eventType="touchUpInside" id="CNh-Fc-6yE"/>
-                                            </connections>
                                         </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="btnEdit" destination="Nru-uz-onr" id="awq-xx-egF"/>
                                     <outlet property="imgReceita" destination="fH6-V6-mtU" id="NRP-os-tSC"/>
                                     <outlet property="lblLike" destination="Mbd-lj-QAm" id="KSH-pU-0EU"/>
                                     <outlet property="lblReceita" destination="bFE-WZ-WFE" id="TPa-8X-xXh"/>
@@ -364,17 +362,18 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <segue destination="uBF-86-lY8" kind="show" identifier="minhaReceitaToDetalheSegue" id="apb-O9-Pcb"/>
+                        <segue destination="uBF-86-lY8" kind="show" identifier="minhasReceitasToDetalheSegue" id="apb-O9-Pcb"/>
+                        <segue destination="uVi-Gd-iRe" kind="show" identifier="minhasReceitasToNovaReceitaSegue" id="naZ-9e-54p"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bxb-Zc-QZX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1560" y="1094"/>
         </scene>
-        <!--View Controller-->
+        <!--Nova Receita View Controller-->
         <scene sceneID="99i-dS-1jb">
             <objects>
-                <viewController id="uVi-Gd-iRe" sceneMemberID="viewController">
+                <viewController id="uVi-Gd-iRe" customClass="NovaReceitaViewController" customModule="CaderninhoDaVovo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MRL-s1-DQl"/>
                         <viewControllerLayoutGuide type="bottom" id="Let-Rb-oLp"/>
@@ -382,9 +381,94 @@
                     <view key="view" contentMode="scaleToFill" id="lBX-uC-oPz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bv8-bP-BgI">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="599"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="ROz-60-pqI">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="164"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9AQ-ne-pWv">
+                                        <rect key="frame" x="20" y="213" width="280" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ingredientes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nbv-Fq-0pD">
+                                        <rect key="frame" x="20" y="274" width="280" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nc4-wb-aKG">
+                                        <rect key="frame" x="20" y="236" width="280" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="uVi-Gd-iRe" id="c6E-hX-0QA"/>
+                                        </connections>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0WV-j1-He8">
+                                        <rect key="frame" x="20" y="298" width="280" height="128"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="uVi-Gd-iRe" id="OcY-6j-Oms"/>
+                                        </connections>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CRD-ba-26G">
+                                        <rect key="frame" x="20" y="458" width="280" height="128"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="uVi-Gd-iRe" id="TRu-uN-Q3l"/>
+                                        </connections>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Modo de Preparo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Exx-Yj-5GD">
+                                        <rect key="frame" x="20" y="434" width="280" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="BDi-Dh-2jz">
+                                        <rect key="frame" x="150" y="71" width="20" height="20"/>
+                                        <color key="backgroundColor" red="1" green="0.030407675681218826" blue="0.010302376964786641" alpha="0.0" colorSpace="calibratedRGB"/>
+                                        <color key="color" red="1" green="0.030407675681218826" blue="0.010302376964786641" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HYj-8v-pWK">
+                                        <rect key="frame" x="0.0" y="164" width="320" height="44"/>
+                                        <items>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="mAS-fO-QL3"/>
+                                            <barButtonItem systemItem="edit" id="L7a-A7-vJ7"/>
+                                        </items>
+                                    </toolbar>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="vFX-VF-5UB">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="D8L-6b-kHl">
+                            <connections>
+                                <action selector="salvaReceita:" destination="uVi-Gd-iRe" id="oX0-oj-94K"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="btnEditImagem" destination="L7a-A7-vJ7" id="gZn-iE-TtW"/>
+                        <outlet property="btnSave" destination="D8L-6b-kHl" id="IVr-ap-EIT"/>
+                        <outlet property="imgLoad" destination="BDi-Dh-2jz" id="Ctb-pt-q57"/>
+                        <outlet property="imgReceita" destination="ROz-60-pqI" id="5C3-x4-crr"/>
+                        <outlet property="scrollView" destination="Bv8-bP-BgI" id="OFF-PU-tzf"/>
+                        <outlet property="txtIngredientes" destination="0WV-j1-He8" id="ga9-In-2z9"/>
+                        <outlet property="txtModoPreparo" destination="CRD-ba-26G" id="x44-FQ-2FT"/>
+                        <outlet property="txtNome" destination="nc4-wb-aKG" id="dxp-wz-XLB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Opt-ga-MWA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -436,6 +520,7 @@
         <image name="diary" width="30" height="30"/>
         <image name="heart" width="48" height="48"/>
         <image name="heartWhite" width="48" height="48"/>
+        <image name="noImage" width="500" height="362"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="apb-O9-Pcb"/>

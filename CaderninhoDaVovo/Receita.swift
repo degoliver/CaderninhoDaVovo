@@ -15,7 +15,7 @@ class Receita: NSObject {
     var imagem:String?
     var nome:String?
     var ingredientes:String?
-    var descricao:String?
+    var modoPreparo:String?
     var qtdLike:Int?
     var marcadolike:Bool?
     
@@ -26,12 +26,12 @@ class Receita: NSObject {
         self.qtdLike = qtdLike
     }
     
-    init(codigo:Int?, nomeUsuario:String?, imagem:String?, nome:String?, ingredientes:String?,descricao:String?, qtdLike:Int?, marcadolike:Bool?){
+    init(codigo:Int?, nomeUsuario:String?, imagem:String?, nome:String?, ingredientes:String?, modoPreparo:String?, qtdLike:Int?, marcadolike:Bool?){
         self.codigo = codigo
         self.nomeUsuario = nomeUsuario
         self.imagem = imagem
         self.nome = nome
-        self.descricao = descricao
+        self.modoPreparo = modoPreparo
         self.qtdLike = qtdLike
         self.ingredientes = ingredientes
         self.marcadolike = marcadolike
@@ -62,9 +62,9 @@ class Receita: NSObject {
             if let dados = json["dados"] as? [AnyObject]{
                 for values in dados {
                     if let nomeUsu = values["usuarioNome"] as? String {
-                        receitas.append(Receita(codigo: Int(values["app_caderninho_receita_ID"]! as! String), nomeUsuario: nomeUsu as! String, imagem: values["imagem"]! as! String, nome: values["nome"]! as! String, ingredientes: values["ingredientes"]! as! String, descricao: values["modoPreparo"]! as! String, qtdLike: Int(values["qtdLike"]! as! String), marcadolike: values["marcadoLike"]! as! String == "1"))
+                        receitas.append(Receita(codigo: Int(values["app_caderninho_receita_ID"] as! String), nomeUsuario: nomeUsu , imagem: values["imagem"] as? String, nome: values["nome"] as? String, ingredientes: values["ingredientes"] as? String, modoPreparo: values["modoPreparo"] as? String, qtdLike: Int(values["qtdLike"]! as! String), marcadolike: values["marcadoLike"] as! String == "1"))
                     } else{
-                        receitas.append(Receita(codigo: Int(values["codigo"]! as! String), imagem: values["imagem"]! as! String,  nome: values["nome"]! as! String, qtdLike: Int(values["qtdLike"]! as! String)))
+                        receitas.append(Receita(codigo: Int(values["codigo"] as! String), imagem: values["imagem"] as? String,  nome: values["nome"] as? String, qtdLike: Int(values["qtdLike"] as! String)))
                     }
                 }
             }

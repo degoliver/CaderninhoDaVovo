@@ -15,6 +15,9 @@ class MinhasReceitasTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         Receita.carregaReceita("http://syskf.institutobfh.com.br//modulos/appCaderninho/selectReceitaList.ashx?usuarioID="+PFUser.currentUser()!.objectId!, callback: carregaTable)
     }
     
@@ -43,21 +46,29 @@ class MinhasReceitasTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cellID", forIndexPath: indexPath) as! MinhaReceitaTableViewCell
         
+        cell.receitaID = self.receitas[indexPath.row].codigo
         cell.lblReceita.text = self.receitas[indexPath.row].nome
         cell.lblLike.text = (self.receitas[indexPath.row].qtdLike! == 0) ? "Ninguém favoritou ainda" : String(self.receitas[indexPath.row].qtdLike!) + ((self.receitas[indexPath.row].qtdLike! == 1) ? " gostou" : " gostaram")
         if(self.receitas[indexPath.row].imagem != ""){
             cell.loadImg.startAnimating()
             Utils.downloadImage(self.receitas[indexPath.row].imagem!, callback: retornaImagem, sender: cell)
         }
+        cell.btnEdit.tag = cell.receitaID!
+        cell.btnEdit.addTarget(self, action: "editReceita:", forControlEvents: .TouchUpInside)
         
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("minhaReceitaToDetalheSegue", sender: self.receitas[indexPath.row].codigo)
+        self.performSegueWithIdentifier("minhasReceitasToDetalheSegue", sender: self.receitas[indexPath.row].codigo)
     }
     
     @IBAction func adicionarReceita(sender: UIBarButtonItem) {
+        self.performSegueWithIdentifier("minhasReceitasToNovaReceitaSegue", sender: nil)
+    }
+    
+    func editReceita(sender:UIButton) {
+        self.performSegueWithIdentifier("minhasReceitasToNovaReceitaSegue", sender: sender.tag)
     }
     
     @IBAction func LogoutAction(sender: UIBarButtonItem) {
@@ -74,9 +85,14 @@ class MinhasReceitasTableViewController: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier=="minhaReceitaToDetalheSegue"){
+        if(segue.identifier == "minhasReceitasToDetalheSegue"){
             let vc:DetalheReceitaViewController = segue.destinationViewController as!DetalheReceitaViewController
             vc.codigo = "\(sender!)"
+        }else if(segue.identifier == "minhasReceitasToNovaReceitaSegue"){
+            let vc:NovaReceitaViewController = segue.destinationViewController as!NovaReceitaViewController
+            if(sender != nil){
+                vc.codigo = "\(sender!)"
+            }
         }
     }
     
