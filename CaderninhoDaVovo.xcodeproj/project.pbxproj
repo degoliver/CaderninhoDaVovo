@@ -25,6 +25,7 @@
 		F1317C961C0A3F560037B37A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1317C951C0A3F560037B37A /* Security.framework */; };
 		F1317C981C0A3F6B0037B37A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F1317C971C0A3F6B0037B37A /* libsqlite3.tbd */; };
 		F1317C9A1C0A3F710037B37A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F1317C991C0A3F710037B37A /* libz.tbd */; };
+		F142A9BF1C0F390400CB536B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142A9BE1C0F390400CB536B /* Utils.swift */; };
 		F14AC3421C0B5F65005F20A3 /* Receita.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14AC3411C0B5F64005F20A3 /* Receita.swift */; };
 		F14AC3441C0B6E96005F20A3 /* DetalheReceitaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14AC3431C0B6E96005F20A3 /* DetalheReceitaViewController.swift */; };
 		F15DED721C0E241C00B9A90F /* MinhasReceitasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DED711C0E241C00B9A90F /* MinhasReceitasTableViewController.swift */; };
@@ -75,6 +76,7 @@
 		F1317C951C0A3F560037B37A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		F1317C971C0A3F6B0037B37A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		F1317C991C0A3F710037B37A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		F142A9BE1C0F390400CB536B /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		F14AC3411C0B5F64005F20A3 /* Receita.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Receita.swift; sourceTree = "<group>"; };
 		F14AC3431C0B6E96005F20A3 /* DetalheReceitaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalheReceitaViewController.swift; sourceTree = "<group>"; };
 		F15DED711C0E241C00B9A90F /* MinhasReceitasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinhasReceitasTableViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				F14AC3431C0B6E96005F20A3 /* DetalheReceitaViewController.swift */,
 				F15DED711C0E241C00B9A90F /* MinhasReceitasTableViewController.swift */,
 				F15DED731C0E243300B9A90F /* MinhaReceitaTableViewCell.swift */,
+				F142A9BE1C0F390400CB536B /* Utils.swift */,
 			);
 			path = CaderninhoDaVovo;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				F14AC3421C0B5F65005F20A3 /* Receita.swift in Sources */,
 				F1317C481C0A37B90037B37A /* BackgroundViewController.swift in Sources */,
 				F19ACB2D1C0A36B300B7C392 /* AppDelegate.swift in Sources */,
+				F142A9BF1C0F390400CB536B /* Utils.swift in Sources */,
 				F1317C4A1C0A37B90037B37A /* ReceitasTableViewController.swift in Sources */,
 				F1317C4B1C0A37B90037B37A /* ReceitaTableViewCell.swift in Sources */,
 				F15DED741C0E243300B9A90F /* MinhaReceitaTableViewCell.swift in Sources */,

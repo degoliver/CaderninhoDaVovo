@@ -32,29 +32,22 @@ class DetalheReceitaViewController: UIViewController, UIScrollViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func downloadImage(imgURL: String) {
-        loadImg.startAnimating()
-        let url = NSURL(string: imgURL)!
-        let imageSession = NSURLSession.sharedSession()
-        let imgTask = imageSession.downloadTaskWithURL(url){(url,response,error) -> Void in
-            if(error==nil){
-                if let imageData = NSData(contentsOfURL: url!){
-                    dispatch_async(dispatch_get_main_queue(), {
-                        self.loadImg.stopAnimating()
-                        self.imgReceita.image = UIImage(data: imageData)
-                        }
-                    )
-                }
-            }else{print("erro na imagem")}
+    func retornaImagem(img: UIImage?) {
+        if(img != nil){
+            self.loadImg.stopAnimating()
+            self.imgReceita.image = img
         }
-        imgTask.resume()
     }
     
     func carregaView(receitas:[Receita]){
         if(receitas.count==0){ return }
         receita = receitas[0]
         
-        downloadImage((receita?.imagem)!)
+        if(receita?.imagem != ""){
+            loadImg.startAnimating()
+            Utils.downloadImage((receita?.imagem)!, callback: retornaImagem)
+        }
+        
         lblUsuario.text = "Por: \(receita!.nomeUsuario!)"
         lblNome.text = receita?.nome
         
@@ -111,6 +104,8 @@ class DetalheReceitaViewController: UIViewController, UIScrollViewDelegate {
     
     func imageTapped(img: AnyObject)
     {
+        
+        
         if(receita!.marcadolike!){
             imgLike.image = UIImage(named: "heartWhite")
         }else{

@@ -38,15 +38,11 @@ class SingUpViewController: BackgroundViewController {
         let email = self.emailField.text
         
         if(name?.utf16.count < 3){
-            let alert = UIAlertView(title: "Erro", message: "Nome Inválido", delegate: self, cancelButtonTitle: "OK")
-            alert.show()
-        }
-        if(username?.utf16.count < 4 || password?.utf16.count < 5){
-            let alert = UIAlertView(title: "Erro", message: "Usuário ou Senha Inválida", delegate: self, cancelButtonTitle: "OK")
-            alert.show()
+            Utils.alert("Erro",msg: "Nome Inválido")
+        }else if(username?.utf16.count < 4 || password?.utf16.count < 5){
+            Utils.alert("Erro",msg: "Usuário ou Senha Inválida")
         }else if(email?.utf16.count < 8){
-            let alert = UIAlertView(title: "Erro", message: "Email Inválido", delegate: self, cancelButtonTitle: "OK")
-            alert.show()
+            Utils.alert("Erro",msg: "Email Inválido")
         }else{
             let newUser = PFUser()
             newUser.username = username
@@ -57,57 +53,25 @@ class SingUpViewController: BackgroundViewController {
             newUser.signUpInBackgroundWithBlock({ (sucess, error ) -> Void in
                 
                 if((error) != nil){
-                    let alert = UIAlertView(title: "Erro", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
-                    alert.show()
+                    Utils.alert("Erro",msg: "\(error)")
                 }else{
-                    let alert = UIAlertView(title: "Sucesso", message: "Usuário Criado", delegate: self, cancelButtonTitle: "OK")
-                    alert.show()
                     self.dismissViewControllerAnimated(false, completion: nil)
-                    
-                    self.salvaUsuario()
-                    
+                    self.salvaUsuarioMySQL()
+                    Utils.alert("Sucesso",msg: "Usuário Criado!")
                 }
             })
         }
     }
     
-    func salvaUsuario(){
-        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-        let session = NSURLSession(configuration: config)
+    func salvaUsuarioMySQL(){
+        var dados:[String] = [String]()
+        dados.append("login=\(PFUser.currentUser()!.username!)")
+        dados.append("nome=\(PFUser.currentUser()!["nome"]!)")
+        dados.append("senha=\(PFUser.currentUser()!.password!)")
+        dados.append("email=\(PFUser.currentUser()!.email!)")
+        dados.append("codigo=\(PFUser.currentUser()!.objectId!)")
         
-        let nsurl = NSURL(string: "http://syskf.institutobfh.com.br//modulos/appCaderninho/saveUsuario.ashx")!
-        let request = NSMutableURLRequest(URL: nsurl)
-        request.HTTPMethod = "POST"
-        request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
-        
-        var paramString = "login=\(PFUser.currentUser()!.username!)"
-        paramString += "&senha=\(PFUser.currentUser()!.password!)"
-        paramString += "&nome=\(PFUser.currentUser()!["nome"]!)"
-        paramString += "&email=\(PFUser.currentUser()!.email!)"
-        paramString += "&codigo=\(PFUser.currentUser()!.objectId!)"
-        
-        request.HTTPBody = paramString.dataUsingEncoding(NSUTF8StringEncoding)
-        
-        let task = session.dataTaskWithRequest(request, completionHandler: { (data:NSData?, response:NSURLResponse?, error:NSError?) -> Void in
-            
-            let retStr: String = String(data: data!, encoding: NSUTF8StringEncoding)!
-            print(retStr)
-            
-            dispatch_async(dispatch_get_main_queue(), {
-                self.resultado(data)
-            })
-        })
-        task.resume()
+        Utils.salvaDados("http://syskf.institutobfh.com.br//modulos/appCaderninho/saveUsuario.ashx", params: dados)
     }
     
-    func resultado(data:NSData?) {
-        do{
-            let json = try NSJSONSerialization.JSONObjectWithData(data!, options: [])
-            if let result = json["msg"] as? String {
-                print(result)
-            }
-        }catch{
-            print("ERRO")
-        }
-    }
 }

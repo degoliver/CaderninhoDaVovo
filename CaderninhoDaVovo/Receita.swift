@@ -61,8 +61,8 @@ class Receita: NSObject {
             let json = try NSJSONSerialization.JSONObjectWithData(data!, options: [])
             if let dados = json["dados"] as? [AnyObject]{
                 for values in dados {
-                    if let nomeUsu = values["app_caderninho_usuario_nome"] as? String {
-                        receitas.append(Receita(codigo: Int(values["app_caderninho_receita_ID"]! as! String), nomeUsuario: nomeUsu as! String, imagem: values["imagem"]! as! String, nome: values["app_caderninho_receita_nome"]! as! String, ingredientes: values["app_caderninho_receita_ingrediente"]! as! String, descricao: values["app_caderninho_receita_modoPreparo"]! as! String, qtdLike: Int(values["qtdLike"]! as! String), marcadolike: values["marcadoLike"]! as! String == "1"))
+                    if let nomeUsu = values["usuarioNome"] as? String {
+                        receitas.append(Receita(codigo: Int(values["app_caderninho_receita_ID"]! as! String), nomeUsuario: nomeUsu as! String, imagem: values["imagem"]! as! String, nome: values["nome"]! as! String, ingredientes: values["ingredientes"]! as! String, descricao: values["modoPreparo"]! as! String, qtdLike: Int(values["qtdLike"]! as! String), marcadolike: values["marcadoLike"]! as! String == "1"))
                     } else{
                         receitas.append(Receita(codigo: Int(values["codigo"]! as! String), imagem: values["imagem"]! as! String,  nome: values["nome"]! as! String, qtdLike: Int(values["qtdLike"]! as! String)))
                     }

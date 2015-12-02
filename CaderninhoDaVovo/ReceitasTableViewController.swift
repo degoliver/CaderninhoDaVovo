@@ -46,7 +46,8 @@ class ReceitasTableViewController: UITableViewController {
         cell.lblReceita.text = self.receitas[indexPath.row].nome
         cell.lblLike.text = (self.receitas[indexPath.row].qtdLike! == 0) ? "Ninguém favoritou ainda" : String(self.receitas[indexPath.row].qtdLike!) + ((self.receitas[indexPath.row].qtdLike! == 1) ? " gostou" : " gostaram")
         if(self.receitas[indexPath.row].imagem != ""){
-            downloadImage(cell, imgURL: self.receitas[indexPath.row].imagem!)
+            cell.loadImg.startAnimating()
+            Utils.downloadImage(self.receitas[indexPath.row].imagem!, callback: retornaImagem, sender: cell)
         }
         
         return cell
@@ -61,24 +62,14 @@ class ReceitasTableViewController: UITableViewController {
         self.dismissViewControllerAnimated(false, completion: nil)
     }
     
-    func downloadImage(cell: ReceitaTableViewCell, imgURL: String) {
-        cell.loadImg.startAnimating()
-        let url = NSURL(string: imgURL)!
-        let imageSession = NSURLSession.sharedSession()
-        let imgTask = imageSession.downloadTaskWithURL(url){(url,response,error) -> Void in
-            if(error==nil){
-                if let imageData = NSData(contentsOfURL: url!){
-                    dispatch_async(dispatch_get_main_queue(), {
-                            cell.imgReceita.image = UIImage(data: imageData)
-                            cell.loadImg.stopAnimating()
-                        }
-                    )
-                }
-            }else{print("erro na imagem")}
+    func retornaImagem(img: UIImage?, sender: AnyObject?){
+        let cell = sender as? ReceitaTableViewCell
+        if(img != nil){
+            cell?.imgReceita.image = img
         }
-        imgTask.resume()
+        cell?.loadImg.stopAnimating()
     }
-    
+       
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier=="receitaToDetalheSegue"){
             let vc:DetalheReceitaViewController = segue.destinationViewController as!DetalheReceitaViewController
