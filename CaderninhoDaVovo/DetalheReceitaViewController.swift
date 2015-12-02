@@ -20,10 +20,11 @@ class DetalheReceitaViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var lblNome: UILabel!
     @IBOutlet weak var lblUsuario: UILabel!
     @IBOutlet weak var scroolView: UIScrollView!
+    @IBOutlet weak var loadLike: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        imgLike.hidden = true
         Receita.carregaReceita("http://syskf.institutobfh.com.br//modulos/appCaderninho/selectReceita.ashx?receitaID=" + codigo! + "&usuarioID="+PFUser.currentUser()!.objectId!, callback: carregaView)
     }
     
@@ -40,8 +41,13 @@ class DetalheReceitaViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func carregaView(receitas:[Receita]){
-        if(receitas.count==0){ return }
+        if(receitas.count==0){
+            Utils.alert("Erro", msg: "Não foi possível carregar a receita")
+            return
+        }
         receita = receitas[0]
+        
+        imgLike.hidden = false
         
         if(receita?.imagem != ""){
             loadImg.startAnimating()
@@ -83,7 +89,7 @@ class DetalheReceitaViewController: UIViewController, UIScrollViewDelegate {
         
         //Cria view MODO DE PREPARO
         let lblModPre:UILabel = UILabel(frame: CGRectMake(10, 25, 288, 20))
-        lblModPre.text = receita!.descricao!
+        lblModPre.text = receita!.modoPreparo!
         lblModPre.numberOfLines = 0
         lblModPre.lineBreakMode = NSLineBreakMode.ByWordWrapping
         lblModPre.font = UIFont(name: ".SFUIText-Regular", size: 12)
@@ -104,14 +110,28 @@ class DetalheReceitaViewController: UIViewController, UIScrollViewDelegate {
     
     func imageTapped(img: AnyObject)
     {
+        imgLike.hidden = true
+        loadLike.startAnimating()
         
-        
-        if(receita!.marcadolike!){
-            imgLike.image = UIImage(named: "heartWhite")
-        }else{
-            imgLike.image = UIImage(named: "heart")
+        var dados:[String] = [String]()
+        dados.append("like=\((receita!.marcadolike!) ? 0 : 1)")
+        dados.append("&usuarioID=\(PFUser.currentUser()!.objectId!)")
+        dados.append("&receitaID=\(receita!.codigo!)")
+
+        Utils.salvaDados("http://syskf.institutobfh.com.br//modulos/appCaderninho/saveLike.ashx", params: dados, alerta: true, callback: retornaDados)
+    }
+    
+    func retornaDados(status: Bool){
+        loadLike.stopAnimating()
+        if(status) {
+            if(receita!.marcadolike!){
+                imgLike.image = UIImage(named: "heartWhite")
+            }else{
+                imgLike.image = UIImage(named: "heart")
+            }
+            receita?.marcadolike = !receita!.marcadolike!
         }
-        receita?.marcadolike = !receita!.marcadolike!
+        imgLike.hidden = false
     }
     
 }
