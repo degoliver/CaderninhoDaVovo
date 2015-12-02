@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F1267DE91C0F2D1400E9212D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1267DE81C0F2D1400E9212D /* Assets.xcassets */; };
 		F1317C481C0A37B90037B37A /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1317C421C0A37B90037B37A /* BackgroundViewController.swift */; };
 		F1317C491C0A37B90037B37A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1317C431C0A37B90037B37A /* LoginViewController.swift */; };
 		F1317C4A1C0A37B90037B37A /* ReceitasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1317C441C0A37B90037B37A /* ReceitasTableViewController.swift */; };
@@ -26,7 +27,6 @@
 		F1317C9A1C0A3F710037B37A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F1317C991C0A3F710037B37A /* libz.tbd */; };
 		F14AC3421C0B5F65005F20A3 /* Receita.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14AC3411C0B5F64005F20A3 /* Receita.swift */; };
 		F14AC3441C0B6E96005F20A3 /* DetalheReceitaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14AC3431C0B6E96005F20A3 /* DetalheReceitaViewController.swift */; };
-		F15DED701C0E232E00B9A90F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F15DED6F1C0E232E00B9A90F /* Assets.xcassets */; };
 		F15DED721C0E241C00B9A90F /* MinhasReceitasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DED711C0E241C00B9A90F /* MinhasReceitasTableViewController.swift */; };
 		F15DED741C0E243300B9A90F /* MinhaReceitaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DED731C0E243300B9A90F /* MinhaReceitaTableViewCell.swift */; };
 		F19ACB2D1C0A36B300B7C392 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19ACB2C1C0A36B300B7C392 /* AppDelegate.swift */; };
@@ -57,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F1267DE81C0F2D1400E9212D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1317C421C0A37B90037B37A /* BackgroundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundViewController.swift; sourceTree = "<group>"; };
 		F1317C431C0A37B90037B37A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F1317C441C0A37B90037B37A /* ReceitasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceitasTableViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		F1317C991C0A3F710037B37A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		F14AC3411C0B5F64005F20A3 /* Receita.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Receita.swift; sourceTree = "<group>"; };
 		F14AC3431C0B6E96005F20A3 /* DetalheReceitaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalheReceitaViewController.swift; sourceTree = "<group>"; };
-		F15DED6F1C0E232E00B9A90F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F15DED711C0E241C00B9A90F /* MinhasReceitasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinhasReceitasTableViewController.swift; sourceTree = "<group>"; };
 		F15DED731C0E243300B9A90F /* MinhaReceitaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinhaReceitaTableViewCell.swift; sourceTree = "<group>"; };
 		F19ACB291C0A36B300B7C392 /* CaderninhoDaVovo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaderninhoDaVovo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,7 +189,7 @@
 				F1317C451C0A37B90037B37A /* ReceitaTableViewCell.swift */,
 				F1317C461C0A37B90037B37A /* SingUpViewController.swift */,
 				F19ACB301C0A36B300B7C392 /* Main.storyboard */,
-				F15DED6F1C0E232E00B9A90F /* Assets.xcassets */,
+				F1267DE81C0F2D1400E9212D /* Assets.xcassets */,
 				F19ACB351C0A36B300B7C392 /* LaunchScreen.storyboard */,
 				F19ACB381C0A36B300B7C392 /* Info.plist */,
 				F14AC3411C0B5F64005F20A3 /* Receita.swift */,
@@ -323,7 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F19ACB371C0A36B300B7C392 /* LaunchScreen.storyboard in Resources */,
-				F15DED701C0E232E00B9A90F /* Assets.xcassets in Resources */,
+				F1267DE91C0F2D1400E9212D /* Assets.xcassets in Resources */,
 				F19ACB321C0A36B300B7C392 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
