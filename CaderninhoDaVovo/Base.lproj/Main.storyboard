@@ -246,7 +246,7 @@
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e9H-nb-2bi">
                                         <rect key="frame" x="0.0" y="211" width="320" height="33"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000 Gostaram desta receita" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yC8-88-9tg">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yC8-88-9tg">
                                                 <rect key="frame" x="67" y="8" width="228" height="21"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="15"/>
@@ -257,6 +257,10 @@
                                                 <rect key="frame" x="34" y="4" width="25" height="25"/>
                                                 <animations/>
                                             </imageView>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="8Wy-Hy-cfP">
+                                                <rect key="frame" x="36" y="7" width="20" height="20"/>
+                                                <color key="color" red="1" green="0.0" blue="0.050213125069721976" alpha="1" colorSpace="calibratedRGB"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <animations/>
                                         <color key="backgroundColor" red="0.96196338383838387" green="0.96196338383838387" blue="0.96196338383838387" alpha="1" colorSpace="calibratedRGB"/>
@@ -265,14 +269,14 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="164"/>
                                         <animations/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mB8-qv-dRY">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mB8-qv-dRY">
                                         <rect key="frame" x="20" y="182" width="280" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Por: João da Silva" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zzI-tV-2mX">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zzI-tV-2mX">
                                         <rect key="frame" x="17" y="162" width="296" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="10"/>
@@ -304,6 +308,7 @@
                         <outlet property="lblNome" destination="mB8-qv-dRY" id="ek9-s9-f0l"/>
                         <outlet property="lblUsuario" destination="zzI-tV-2mX" id="LP1-yp-7Ku"/>
                         <outlet property="loadImg" destination="m6W-Wf-SeG" id="upV-F7-Nfa"/>
+                        <outlet property="loadLike" destination="8Wy-Hy-cfP" id="mCv-CG-7Ke"/>
                         <outlet property="scroolView" destination="Jtb-ip-Scm" id="XxH-Ac-RZf"/>
                     </connections>
                 </viewController>
@@ -389,6 +394,7 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
+                                    <outlet property="btnEdit" destination="Nru-uz-onr" id="awq-xx-egF"/>
                                     <outlet property="imgReceita" destination="fH6-V6-mtU" id="NRP-os-tSC"/>
                                     <outlet property="lblLike" destination="Mbd-lj-QAm" id="KSH-pU-0EU"/>
                                     <outlet property="lblReceita" destination="bFE-WZ-WFE" id="TPa-8X-xXh"/>
@@ -416,7 +422,8 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <segue destination="uBF-86-lY8" kind="show" identifier="minhaReceitaToDetalheSegue" id="apb-O9-Pcb"/>
+                        <segue destination="uBF-86-lY8" kind="show" identifier="minhasReceitasToDetalheSegue" id="apb-O9-Pcb"/>
+                        <segue destination="uVi-Gd-iRe" kind="show" identifier="minhasReceitasToNovaReceitaSegue" id="naZ-9e-54p"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bxb-Zc-QZX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -721,6 +728,7 @@
         <image name="diary" width="30" height="30"/>
         <image name="heart" width="48" height="48"/>
         <image name="heartWhite" width="48" height="48"/>
+        <image name="noImage" width="500" height="362"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="apb-O9-Pcb"/>

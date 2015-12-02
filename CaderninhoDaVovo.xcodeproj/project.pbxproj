@@ -37,6 +37,7 @@
 		F19ACB371C0A36B300B7C392 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F19ACB351C0A36B300B7C392 /* LaunchScreen.storyboard */; };
 		F19ACB421C0A36B300B7C392 /* CaderninhoDaVovoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19ACB411C0A36B300B7C392 /* CaderninhoDaVovoTests.swift */; };
 		F19ACB4D1C0A36B300B7C392 /* CaderninhoDaVovoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19ACB4C1C0A36B300B7C392 /* CaderninhoDaVovoUITests.swift */; };
+		F1B368DA1C0F4D1B00BD231C /* NovaReceitaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B368D91C0F4D1B00BD231C /* NovaReceitaViewController.swift */; };
 		F1F7E5951C0A42CD00F3E58E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F7E5921C0A42CD00F3E58E /* Bolts.framework */; };
 		F1F7E5961C0A42CD00F3E58E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F7E5931C0A42CD00F3E58E /* Parse.framework */; };
 		F1F7E5971C0A42CD00F3E58E /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F7E5941C0A42CD00F3E58E /* ParseUI.framework */; };
@@ -96,6 +97,7 @@
 		F19ACB481C0A36B300B7C392 /* CaderninhoDaVovoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaderninhoDaVovoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F19ACB4C1C0A36B300B7C392 /* CaderninhoDaVovoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaderninhoDaVovoUITests.swift; sourceTree = "<group>"; };
 		F19ACB4E1C0A36B300B7C392 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1B368D91C0F4D1B00BD231C /* NovaReceitaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NovaReceitaViewController.swift; sourceTree = "<group>"; };
 		F1F7E5921C0A42CD00F3E58E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../Bolts.framework; sourceTree = "<group>"; };
 		F1F7E5931C0A42CD00F3E58E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../Parse.framework; sourceTree = "<group>"; };
 		F1F7E5941C0A42CD00F3E58E /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = ../ParseUI.framework; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				F15DED711C0E241C00B9A90F /* MinhasReceitasTableViewController.swift */,
 				F15DED731C0E243300B9A90F /* MinhaReceitaTableViewCell.swift */,
 				F142A9BE1C0F390400CB536B /* Utils.swift */,
+				F1B368D91C0F4D1B00BD231C /* NovaReceitaViewController.swift */,
 			);
 			path = CaderninhoDaVovo;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				F1317C4C1C0A37B90037B37A /* SingUpViewController.swift in Sources */,
 				F14AC3421C0B5F65005F20A3 /* Receita.swift in Sources */,
 				F1317C481C0A37B90037B37A /* BackgroundViewController.swift in Sources */,
+				F1B368DA1C0F4D1B00BD231C /* NovaReceitaViewController.swift in Sources */,
 				F19ACB2D1C0A36B300B7C392 /* AppDelegate.swift in Sources */,
 				F142A9BF1C0F390400CB536B /* Utils.swift in Sources */,
 				ACF817951C0F537700967E4D /* CadastrarReceitasViewController.swift in Sources */,

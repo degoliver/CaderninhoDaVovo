@@ -14,7 +14,7 @@ class Utils: UIViewController {
         salvaDados(url, params: params, alerta: false, callback: nil)
     }
     
-    class func salvaDados(url: String, params: [String], alerta: Bool, callback: ((String) -> Void)?){
+    class func salvaDados(url: String, params: [String], alerta: Bool, callback: ((Bool) -> Void)?){
         let config = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: config)
         
@@ -43,26 +43,32 @@ class Utils: UIViewController {
         task.resume()
     }
     
-    class func resultado(data:NSData?, alerta: Bool) -> String {
-        var status: String = ""
+    class func resultado(data:NSData?, alerta: Bool) -> Bool {
+        var status: Bool = false
         do{
             let json = try NSJSONSerialization.JSONObjectWithData(data!, options: [])
             if let result = json["msg"] as? String {
                 print(result)
-                status = ((json["status"] as! String == "OK") ? "Sucesso" : "Erro")
-                if(alerta){ alert(status, msg: result) }
+                status = ((json["status"] as! String == "OK") ? true : false)
+                if(alerta){ alert((status) ? "Sucesso" : "Erro", msg: result) }
             }
         }catch{
             print("ERRO")
-            return "Erro"
+            return false
         }
         return status
     }
     
     class func alert(title:String, msg:String){
-        let actionAlert = UIAlertController(title: title, message: msg, preferredStyle: .Alert)
-        actionAlert.addAction(UIAlertAction(title: "OK", style:.Default, handler: nil))
-        UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(actionAlert, animated: true, completion: nil)
+        if var topController = UIApplication.sharedApplication().keyWindow?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
+            
+            let actionAlert = UIAlertController(title: title, message: msg, preferredStyle: .Alert)
+            actionAlert.addAction(UIAlertAction(title: "OK", style:.Default, handler: nil))
+            topController.presentViewController(actionAlert, animated: true, completion: nil)
+        }
     }
     
     class func downloadImage(imgURL: String, callback: (UIImage?) -> Void) {

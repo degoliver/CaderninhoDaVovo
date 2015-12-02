@@ -10,7 +10,9 @@ import UIKit
 
 class MinhaReceitaTableViewCell: UITableViewCell {
 
+    var receitaID:Int?
     @IBOutlet weak var lblReceita: UILabel!
+    @IBOutlet weak var btnEdit: UIButton!
     @IBOutlet weak var lblLike: UILabel!
     @IBOutlet weak var imgReceita: UIImageView!
     @IBOutlet weak var loadImg: UIActivityIndicatorView!
@@ -24,9 +26,6 @@ class MinhaReceitaTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-
-    @IBAction func editReceita(sender: UIButton) {
     }
     
 }
